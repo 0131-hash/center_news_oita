@@ -1,0 +1,46 @@
+---
+layout: default
+extra_css: |
+  <style>
+    .post-header { margin-bottom: 2rem; border-bottom: 3px solid #1a5276; padding-bottom: 1rem; }
+    .post-header h2 { font-size: 1.8rem; color: #1a5276; }
+    .post-meta { font-size: 0.85rem; color: #888; margin-top: 0.5rem; }
+    .post-body { background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .post-body h3 { font-size: 1.2rem; color: #1a5276; margin: 2rem 0 0.8rem; border-left: 4px solid #2e86c1; padding-left: 0.8rem; }
+    .post-body p { margin-bottom: 1rem; font-size: 0.95rem; }
+    .post-body img { max-width: 100%; border-radius: 4px; margin: 1rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    .pages-section { margin-top: 2.5rem; }
+    .pages-section h3 { font-size: 1rem; color: #555; margin-bottom: 1rem; }
+    .page-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .page-thumb { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .page-thumb img { width: 100%; display: block; }
+    .page-thumb span { display: block; text-align: center; font-size: 0.8rem; color: #888; padding: 0.4rem; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: #1a5276; font-size: 0.9rem; }
+    .back-link:before { content: "← "; }
+  </style>
+---
+
+<a href="{{ site.baseurl }}/" class="back-link">一覧に戻る</a>
+
+<div class="post-header">
+  <h2>{{ page.title }}</h2>
+  <div class="post-meta">{{ page.date | date: "%Y年%m月%d日" }}発行 &nbsp;|&nbsp; {{ page.issue }}</div>
+</div>
+
+<div class="post-body">
+  {{ content }}
+</div>
+
+{% if page.page_images %}
+<div class="pages-section">
+  <h3>全ページ</h3>
+  <div class="page-grid">
+    {% for img in page.page_images %}
+    <div class="page-thumb">
+      <img src="{{ site.baseurl }}/assets/images/{{ img }}" alt="ページ" loading="lazy">
+      <span>{{ forloop.index }}ページ</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

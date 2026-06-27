@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: 0131-hash/cnews_Oita
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/cnews_Oita/assets/images"
+
+collections:
+  - name: "posts"
+    label: "記事"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "号数", name: "issue", widget: "string", hint: "例: No.215" }
+      - { label: "発行日", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "概要", name: "description", widget: "string" }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - label: "ページ画像"
+        name: "page_images"
+        widget: "list"
+        field: { label: "画像パス", name: "image", widget: "string" }
