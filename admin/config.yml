@@ -1,12 +1,9 @@
 backend:
-  name: github
-  repo: 0131-hash/cnews_Oita
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: Ov23liXMDDB5kNzSgf3f
 
 media_folder: "assets/images"
-public_folder: "/cnews_Oita/assets/images"
+public_folder: "/assets/images"
 
 collections:
   - name: "posts"
