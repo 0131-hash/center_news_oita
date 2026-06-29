@@ -1,7 +1,7 @@
 title: 技術情報おおいた
 description: 大分県産業科学技術センター 技術情報誌
-url: "https://0131-hash.github.io"
-baseurl: "/center_news_oita"
+url: "https://tiny-otter-996358.netlify.app"
+baseurl: ""
 lang: ja
 
 plugins:
